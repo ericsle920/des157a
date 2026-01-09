@@ -1,0 +1,13 @@
+body{
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+#banner{
+    width: 1100px;
+    height: 250px;
+    background-color: #D0F8A8;
+}
+
+#column a{
+    list-style-type: none;
+}
