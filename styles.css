@@ -5,7 +5,9 @@ body{
 #banner{
     width: 1100px;
     height: 250px;
-    background-color: #87c9a6;
+    /* background-color: #87c9a6; */
+    /* background-image: linear-gradient(to bottom, #87c9a6 to #33D77B); */
+    background-image:linear-gradient(to bottom, #87C9A6, #33D77B);
     border: solid 12px #68686F;
     border-radius: 12px;
     margin: auto;
@@ -94,8 +96,8 @@ main{
 
 h2{
     color: #FFFFFF;
-    -webkit-text-stroke: 6px #68686F;
-    paint-order: stroke fill;
+    -webkit-text-stroke: 1px #68686F;
+    /* paint-order: stroke fill; */
     text-align: center;
 }
 
@@ -116,20 +118,26 @@ footer a{
     color: #68686F;
 }
 
-h3{
+p{
     font-weight: normal;
     font-size: 2.5em;
     padding-top: 50px;
     padding-left: 12px;
+    padding-right: 24px;
+    padding-bottom: 50px;
     transition: all;
     text-align: left;
     display: inline-block;
+    background-color: #FFFFFF;
+    border: 8px solid #2d2d2d;
+    border-radius: 4px;
 }
 
-h3:hover{
+p:hover{
     animation-name: floating;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
+    cursor: pointer;
 }
 
 @keyframes floating{
@@ -155,9 +163,36 @@ h3:hover{
 }
 
 
-
 .voltorb-shadow{
     position: absolute;
     bottom: 0px;
     right: 250px;
+}
+
+.ditto-shadow{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}
+
+.ditto{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    animation-name: dittofloating;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-duration: 0.9s;
+}
+
+@keyframes dittofloating{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-10px);}
+    100%{transform: translateY(0);}   
+}
+
+.voltorb-hp{
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
 }
