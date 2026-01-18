@@ -1,0 +1,39 @@
+body{
+    background-image: linear-gradient(to bottom, #40E0C8, #C9F888, #58D070 );
+}
+h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+h2{
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+date{
+    font-family: "DotGothic16", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;   
+}
+
+.article-1{
+    margin: auto;
+    max-width: 800px;
+    background-color: rgb(224, 224, 224);
+    border: 6px solid black;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+p{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 2em;
+    max-width: 400px;
+
+}
