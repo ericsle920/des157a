@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Experiments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Open the console to view the experiment!</h2>
+
+    <script>
+        // loop right below, sequence is calculating when a number is divisible by 3, THEN it will print Fizz
+        for (i=1; i<=100; i++){
+            if (i%3 === 0){
+                console.log("Fizz");
+            // selection right here, the if else stuff
+            } else if (i%5 === 0){ 
+                console.log("Buzz")
+            } else if (i%4 === 0){
+                console.log('Fibuzz?')
+            } else if (i%7 === 0){
+                console.log('Buzz lightyear?')
+            } else if (i%11 === 0){
+                console.log('Woody? I forgot what im supposed to say here');
+            } else {
+                console.log(i);
+            }
+        }
+    </script>
+
+    <!-- my code makes it so that whenever a number is divisible by 3, the console will print "fizz", if divisible by 5, then it will say buzz, for numbers divisible by 4, it will say Fibuzz?, for numbers divisible by 7: buzz lightyear?, and numbers divisible by 11, 'woody? i forgot what im supposed to say here' -->
+</body>
+</html>
