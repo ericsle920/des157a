@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Experiments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2>do you like your color choice?</h2>
+
+    <script>
+
+        // my experiment prompts a user to pick a color from red, green, or blue. it then changes the color of the background to the color they selected, and if not, there is an error message
+
+        var colors = ["red", "blue", "green"];
+
+        function checkColor(inputColor){
+            for (let i=0; i<colors.length; i++){
+                if (inputColor === colors[i]){
+                    return colors[i];
+                } 
+            }
+        }
+
+
+
+        function changeColor(){
+            var inputColor = prompt("howdy! pick a color: red, blue or green!", "");
+
+            var validate = checkColor(inputColor);
+
+            if (validate==="red"){
+                document.body.style.backgroundColor = "red";
+            } else if (validate==="blue"){
+                document.body.style.backgroundColor = "blue";
+            } else if (validate==="green"){
+                document.body.style.backgroundColor = "green";
+            } else {
+                alert("that color isn't in my list, try another!");
+            }
+        }
+
+        changeColor();
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
