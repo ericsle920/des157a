@@ -8,6 +8,7 @@ h1 {
   font-size: 1em;
 }
 
+
 h2{
     font-family: "Pixelify Sans", sans-serif;
     font-optical-sizing: auto;
@@ -21,6 +22,15 @@ date{
 }
 
 .article-1{
+    margin: auto;
+    max-width: 800px;
+    background-color: rgb(224, 224, 224);
+    border: 6px solid black;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.article-2{
     margin: auto;
     max-width: 800px;
     background-color: rgb(224, 224, 224);
