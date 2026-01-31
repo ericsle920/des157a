@@ -1,0 +1,193 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 8px;
+}
+
+body{
+    background-color: #D6D9DC;
+    font-family: DotGothic16;
+    font-size: 16px;
+}
+
+header{
+    text-align: center;
+}
+
+#form{
+    flex: 1;
+    min-width: 300px;
+}
+
+#containerForPic{
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    border: 4px solid black;
+    position: relative;
+}
+
+#containerForPic img{
+    position: relative;
+    top: 60px;
+    left: 130px;
+    transform: scale(1.25);
+}
+
+input[type="text"]:focus{
+    border: 1px solid #D6D9DC;
+    outline: dashed gray;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#output, #professorPicture{
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.user-word{
+    color: blue;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* oh my god this is gonna take forever */
+
+.nameStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.nameStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.nameStack input, .nameStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
+
+.adjStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.adjStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.adjStack input, .adjStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
+
+.townStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.townStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.townStack input, .townStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
+
+.starterStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.starterStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.starterStack input, .starterStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
+
+.exclamationStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.exclamationStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.exclamationStack input, .exclamationStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
+
+.moveStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.moveStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.moveStack input, .moveStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
+
+.rivalStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rivalStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+}
+
+.rivalStack input, .rivalStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+}
