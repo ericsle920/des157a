@@ -66,128 +66,164 @@ input[type="text"]:focus{
 
 /* oh my god this is gonna take forever */
 
-.nameStack{
+#nameStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.nameStack label{
+#nameStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.nameStack input, .nameStack select {
+#nameStack input, .nameStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.adjStack{
+#adjStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.adjStack label{
+#adjStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.adjStack input, .adjStack select {
+#adjStack input, .adjStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.townStack{
+#townStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.townStack label{
+#townStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.townStack input, .townStack select {
+#townStack input, .townStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.starterStack{
+#starterStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.starterStack label{
+#starterStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.starterStack input, .starterStack select {
+#starterStack input, .starterStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.exclamationStack{
+#exclamationStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.exclamationStack label{
+#exclamationStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.exclamationStack input, .exclamationStack select {
+#exclamationStack input, .exclamationStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.moveStack{
+#moveStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.moveStack label{
+#moveStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.moveStack input, .moveStack select {
+#moveStack input, .moveStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.rivalStack{
+#rivalStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.rivalStack label{
+#rivalStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
 }
 
-.rivalStack input, .rivalStack select {
+#rivalStack input, .rivalStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
+
+#pokemonImageContainer {
+    width: 150px; 
+    height: 150px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#pokemonImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+#output {
+    max-width: 450px;
+    padding: 10px;
+    flex: 1;
+}
+
+#story {
+    margin-top: 10px;
+    font-size: 0.9em; 
+    line-height: 1.4;
+}
+
+

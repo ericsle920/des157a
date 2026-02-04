@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Choose Your Starter! Madlibs</title>
+</head>
+<body>
+    <header>
+        <h1>Choose your starter! Madlibs</h1>
+    </header>
+
+    <main>
+        <section id="form">
+            <form id="madLibsForm">
+                <div id="nameStack">
+                    <label for="name">Trainer Name:</label>
+                    <input type="text" id="name" placeholder="ex. Glenda" >
+                </div>
+
+                <div id="adjStack">
+                    <label for="adj">Adjective:</label>
+                    <input type="text" id="adj" placeholder="ex. Excited" >
+                </div>
+               
+                <div id="townStack">
+                    <label for="town">Hometown:</label>
+                    <input type="text" id="town" placeholder="Davis" >
+                </div>
+
+                <div id="starterStack">
+                    <label for="starter">Choose your starter:</label>
+                    <select id="starter" >
+                        <option value="">Select a Pokemon</option>
+                        <option value="Squirtle">Squirtle</option>
+                        <option value="Bulbasaur">Bulbasaur</option>
+                        <option value="Charmander">Charmander</option>
+                    </select>
+                </div>
+
+
+                <div id="exclamationStack">
+                    <label for="exclamation">Exclamation:</label>
+                    <input type="text" id="exclamation" placeholder="ex. Wowzers!" >
+                </div>
+
+                <div id="moveStack">
+                    <label for="move">Attack Name:</label>
+                    <input type="text" id="move" placeholder="ex. Hydro Cannon" >   
+                </div>
+                
+                <div id="rivalStack">
+                    <label for="rival">Rival's Name:</label>
+                    <input type="text" id="rival" placeholder="ex. Donald" >
+                </div>
+
+                <input type="submit" id="submit" value="Start your Pokemon Adventure!!">
+
+            </form>
+
+        </section>
+
+        <section id="professorPicture">
+            <article id="containerForPic">
+                <img src="images/professor.png" alt="Professor with pokeballs" width="400" height="400">
+            </article>
+
+        </section>
+
+        <section id="output" class="hidden">
+            <article>
+                <h2>Your Journey Begins!</h2>
+                <div id="pokemonImageContainer">
+                    <img src="placeholdertext" id="pokemonImage" alt="chosen pokemon" class="hidden">
+                </div>
+                    
+                <p id="story">
+                    It was a big day in <span id="out-town" class="user-word"></span>. 
+                    <span id="out-name1" class="user-word"></span> woke up feeling super 
+                    <span id="out-adj" class="user-word"></span>. Today was their day to pick their first Pokemon!
+                    When <span id="out-name2" class="user-word"></span> arrived at the lab, the Professor showed them three pokeballs. 
+                    <span id="out-name3" class="user-word"></span> didn't even hesitate. 
+                    "I choose you, <span id="out-starter1" class="user-word"></span>!" 
+                    "<span id="out-exclamation" class="user-word"></span>!" the professor said. "Good choice!" 
+                    Suddenly, <span id="out-rival1" class="user-word"></span> burst through the door and challenged 
+                    <span id="out-name4" class="user-word"></span> to a battle. 
+                    "<span id="out-starter2" class="user-word"></span>, use <span id="out-move" class="user-word"></span>!" 
+                    <br><br>
+                    It was a critical hit! "You may have won the battle, but not our war!", 
+                    <span id="out-rival2" class="user-word"></span> shouted. 
+                    Your journey as a Pokemon Trainer has begun!
+                </p>
+                <button type="button" id="close">Reset</button>
+            </article>
+        </section>
+
+
+    </main>
+
+
+    
+</body>
+</html>
