@@ -47,7 +47,6 @@
             document.querySelector('#rival').focus();
         } 
         else {
-            // 3. FILL STORY (Only happens if everything above is filled)
             document.querySelector('#out-name1').textContent = name;
             document.querySelector('#out-name2').textContent = name;
             document.querySelector('#out-name3').textContent = name;
