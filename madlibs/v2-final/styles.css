@@ -12,7 +12,7 @@ main{
 }
 
 body{
-    background-color: #D6D9DC;
+    background-color: #b5e3de;
     font-family: DotGothic16;
     font-size: 16px;
 }
@@ -37,15 +37,29 @@ header{
 #containerForPic img{
     position: relative;
     top: 60px;
-    left: 130px;
-    transform: scale(1.25);
+    left: 135px;
+    transform: scale(1.5);
 }
+
+/* glenda added */
+input[type="text"]{
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/* glenda added */
+input, select{
+    padding: 10px;
+}
+
 
 input[type="text"]:focus{
     border: 1px solid #D6D9DC;
+
     outline: dashed gray;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 199, 63, 0.8);
 }
+
 
 #output, #professorPicture{
     background: white;
@@ -66,128 +80,146 @@ input[type="text"]:focus{
 
 /* oh my god this is gonna take forever */
 
-.nameStack{
+label {
+    width: 150px;
+    text-align: right;
+    margin-right: 16px; 
+}
+
+form div {
     display: flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
-.nameStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-}
-
-.nameStack input, .nameStack select {
+form div input, form div select{
     flex: 1;
     max-width: 250px;
     padding: 8px;
 }
 
-.adjStack{
+/* .nameStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-}
+} */
 
-.adjStack label{
+/* .nameStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
-}
+} */
 
+/* .nameStack input, .nameStack select {
+    flex: 1;
+    max-width: 250px;
+    padding: 8px;
+} */
+
+/* .adjStack{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+} */
+
+/* .adjStack label{
+    width: 150px;
+    text-align: right;
+    margin-right: 16px;
+} */
+/* 
 .adjStack input, .adjStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
-}
+} */
 
-.townStack{
+/* .townStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-}
+} */
 
-.townStack label{
+/* .townStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
-}
-
+} */
+/* 
 .townStack input, .townStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
-}
+} */
 
-.starterStack{
+/* .starterStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-}
+} */
 
-.starterStack label{
+/* .starterStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
-}
+} */
 
-.starterStack input, .starterStack select {
+/* .starterStack input, .starterStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
-}
+} */
 
-.exclamationStack{
+/* .exclamationStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-}
+} */
 
-.exclamationStack label{
+/* .exclamationStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
-}
+} */
 
-.exclamationStack input, .exclamationStack select {
+/* .exclamationStack input, .exclamationStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
-}
+} */
 
-.moveStack{
+/* .moveStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-}
+} */
 
-.moveStack label{
+/* .moveStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
-}
+} */
 
-.moveStack input, .moveStack select {
+/* .moveStack input, .moveStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
-}
+} */
 
-.rivalStack{
+/* .rivalStack{
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-}
+} */
 
-.rivalStack label{
+/* .rivalStack label{
     width: 150px;
     text-align: right;
     margin-right: 16px;
-}
+} */
 
-.rivalStack input, .rivalStack select {
+/* .rivalStack input, .rivalStack select {
     flex: 1;
     max-width: 250px;
     padding: 8px;
-}
+} */
