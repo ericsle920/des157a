@@ -39,6 +39,15 @@ date{
     padding: 12px;
 }
 
+.article-3{
+    margin: auto;
+    max-width: 800px;
+    background-color: rgb(224, 224, 224);
+    border: 6px solid black;
+    border-radius: 4px;
+    padding: 12px;
+}
+
 p{
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
