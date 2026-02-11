@@ -60,6 +60,11 @@ input[type="text"]:focus{
     box-shadow: 0 4px 8px 0 rgba(0, 199, 63, 0.8);
 }
 
+#submit{
+    display: block;
+    margin: 0px auto 0 auto;
+    padding: 12px 12px;
+}
 
 #output, #professorPicture{
     background: white;
@@ -87,139 +92,24 @@ label {
 }
 
 form div {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     margin-bottom: 12px;
 }
 
 form div input, form div select{
     flex: 1;
-    max-width: 250px;
+    max-width: 400px;
     padding: 8px;
 }
 
-/* .nameStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
+#nameStack, #adjStack, #townStack, #starterStack, 
+#exclamationStack, #moveStack, #rivalStack {
+    justify-content: center; 
+    width: 100%;
+}
 
-/* .nameStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-
-/* .nameStack input, .nameStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
-
-/* .adjStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
-
-/* .adjStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-/* 
-.adjStack input, .adjStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
-
-/* .townStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
-
-/* .townStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-/* 
-.townStack input, .townStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
-
-/* .starterStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
-
-/* .starterStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-
-/* .starterStack input, .starterStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
-
-/* .exclamationStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
-
-/* .exclamationStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-
-/* .exclamationStack input, .exclamationStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
-
-/* .moveStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
-
-/* .moveStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-
-/* .moveStack input, .moveStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
-
-/* .rivalStack{
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-} */
-
-/* .rivalStack label{
-    width: 150px;
-    text-align: right;
-    margin-right: 16px;
-} */
-
-/* .rivalStack input, .rivalStack select {
-    flex: 1;
-    max-width: 250px;
-    padding: 8px;
-} */
+#form input, #form select {
+    flex: none; 
+    width: 250px; 
+}
