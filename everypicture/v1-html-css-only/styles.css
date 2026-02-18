@@ -1,6 +1,7 @@
 body {
     /* background-color: #3c3c3c;  */
     background: radial-gradient(circle, #4a4a4a 0%, #1a1a1a 100%);
+    background-image: url(images/everypicbackground.jpg) ;
     color: white;
     font-family: 'DotGothic16', sans-serif;
     display: flex;
