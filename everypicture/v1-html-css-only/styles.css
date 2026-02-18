@@ -1,5 +1,6 @@
 body {
-    background-color: #3c3c3c; 
+    /* background-color: #3c3c3c;  */
+    background: radial-gradient(circle, #4a4a4a 0%, #1a1a1a 100%);
     color: white;
     font-family: 'DotGothic16', sans-serif;
     display: flex;
@@ -150,4 +151,14 @@ p{
 
 .card-animation {
     animation: cardPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes glowyyy {
+    0% { filter: drop-shadow(0 0 5px #3dff8e); }
+    50% { filter: drop-shadow(0 0 20px #3dff8e); }
+    100% { filter: drop-shadow(0 0 5px #3dff8e); }
+}
+
+#pokemon-pack {
+    animation: glowyyy 2s infinite ease-in-out;
 }
