@@ -16,8 +16,9 @@ h1 {
     font-family: 'Pixelify Sans', sans-serif;
     text-transform: uppercase;
     font-size: 48px;
-    color: #ffffff;
-    text-shadow: 3px 3px #669c53;
+    /* text-shadow: 1px 1px #ff1212; */
+    -webkit-text-stroke: #00ff2a;
+    color: #3dff8e;
     margin-bottom: 20px;
 }
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Picture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main id="container">
+        <h1>Every Picture</h1>
+        <div id="pack-section">
+            <img src="images/pack.png" alt="Pokemon Pack" id="pokemon-pack">
+            <button id="open-button">OPEN MY PACK!</button>
+        </div>
+    </main>
+
+    <div id="overlay" class="hidden">
+        <div id="card-display">
+            <p id="card-counter"></p>
+            <img src="images/pikachu" alt="Pokemon Card" id="current-card">
+
+            <p id="story"></p>
+            <div class="controls">
+                <button id="next-button">NEXT CARD</button>
+                <button id="reset-button" class="hidden">START OVER</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
