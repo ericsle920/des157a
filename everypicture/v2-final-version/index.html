@@ -22,17 +22,24 @@
     </main>
 
     <div id="overlay" class="hidden">
-        <div id="card-display">
-            <p id="card-counter"></p>
-            <img src="images/pikachu" alt="Pokemon Card" id="current-card">
+    <div id="card-display">
+        <p id="card-counter"></p> 
+        
+        <div id="card-wrapper">
+            <img src="images/pikachu.png" alt="Pokemon Card" id="current-card">
+        </div>
 
-            <p id="story"></p>
-            <div class="controls">
+        <p id="card-story"></p> 
+
+        <div class="controls">
+            <div class="nav-buttons">
+                <button id="prev-button" class="hidden">PREVIOUS</button>
                 <button id="next-button">NEXT CARD</button>
-                <button id="reset-button" class="hidden">START OVER</button>
             </div>
+            <button id="reset-button">START OVER</button>
         </div>
     </div>
+</div>
     
 </body>
 </html>

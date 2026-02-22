@@ -1,6 +1,6 @@
 body {
     /* background-color: #3c3c3c;  */
-    background: radial-gradient(circle, #4a4a4a 0%, #1a1a1a 100%);
+    /* background: radial-gradient(circle, #4a4a4a 0%, #1a1a1a 100%); */
     background-image: url(images/everypicbackground.jpg) ;
     color: white;
     font-family: 'DotGothic16', sans-serif;
@@ -10,6 +10,10 @@ body {
     height: 750px;
     margin: 0;
     overflow: hidden; 
+}
+
+.hidden{
+    display: none;
 }
 
 h1 {
@@ -80,13 +84,50 @@ button:hover {
     text-align: center;
 }
 
-#current-card {
+/* #current-card {
     max-height: 500px;
     margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 0 30px #9effa2;
+} */
+
+
+#current-card {
+    max-height: 650px; 
+    width: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; 
 }
 
+#current-card:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#reset-button {
+    font-size: 16px; 
+    border-color: #ff4b4b;
+    color: #ff4b4b;
+    box-shadow: 0 0 5px #ff4b4b;
+}
+
+#reset-button:hover {
+    background: #ff4b4b;
+    color: white;
+}
 
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -131,7 +172,7 @@ button:hover {
     font-size: 20px;
     line-height: 1.6;    
     margin: 20px auto 0;    
-    max-width: 350px;       
+    max-width: 800px;       
     color: #ffffff;
     text-align: center;   
 }
