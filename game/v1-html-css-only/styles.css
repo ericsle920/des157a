@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #d30a16 0%, #ff5e5e 100%); 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pixelify Sans', sans-serif; 
+    overflow: hidden; 
+}
+
+#landing {
+    width: 1200px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 160px; 
+}
+
+#game {
+    width: 1200px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 40px; 
+}
+
+#landing h1 {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 64px; 
+    line-height: 1.1;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+#landing h1 span {
+    color: #ffcb05; 
+    display: block; 
+}
+
+#landing p {
+    color: white;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+#landing button {
+    background: white;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding: 15px 50px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 29px;
+    font-weight: 700;
+    cursor: pointer;
+    width: fit-content; 
+    transition: transform 0.1s;
+}
+
+#landing button:hover {
+    transform: scale(1.05);
+    background-color: #d30a16;
+    color: #fdfdfd;
+}
+
+.hidden {
+    display: none !important;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    color: white;
+    font-size: 35px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px;               
+}
+
+figure {
+    position: relative;
+    width: 350px;           
+    height: 350px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/bluespiky.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 0;           
+    padding-bottom: 30px;   
+}
+
+section h2 span {
+    color: #ffcb05;
+    display: block;
+}
+
+
+
+section h2 {
+    color: #3b4cca;
+    font-size: 56px; 
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+figure img {
+    width: 260px;
+    height: auto;
+    image-rendering: pixelated; 
+    z-index: 5;
+    animation: bobble 2.5s ease-in-out infinite;
+}
+
+@keyframes bobble {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.08); 
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+
+
+footer button {
+    background: white;
+    border: 4px solid black;
+    border-radius: 12px;
+    padding: 12px 35px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+footer button:hover {
+    background: red;
+    transform: scale(1.1);
+    color: #fdfdfd;
+}
+
+/* --- for later --- */
+
+/* #progress-container {
+    width: 250px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid black;
+    border-radius: 20px;
+    align-self: center;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%; 
+    height: 100%;
+    background-color: #ffcb05;
+    transition: width 0.3s ease;
+}
+
+#results-screen {
+    width: 1200px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#results-screen h1 {
+    font-size: 80px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#results-screen p {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 40px;
+} */
+
+/* button.correct {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
+
+button.incorrect {
+    background-color: #d30a16 !important;
+    color: white !important;
+} */ 
+

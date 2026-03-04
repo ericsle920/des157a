@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's That Pokemon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> 
+</head>
+
+<body>
+    <main id="landing" class="hidden">
+        <h1>Who's that <br> Pokemon?</h1>
+        <p>How many can you get correct?</p>
+        <button id="start-btn">Start Game!</button>
+    </main>
+
+    <main id="game" class="none">
+        <header>
+            <span id="round">1/10</span>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <span id="score">0 points</span>
+        </header>
+
+        <section>
+            <div>
+                <h2>Who's that <br> <span>Pokemon</span> <br> ?</h2>
+            </div>
+
+            <figure>
+                <img id="pokemon-image" src="images/pikachu_s.svg" alt="mysterious pokemon silhouette" width="400" height="400">
+                <span></span>
+                <span></span>
+                <span></span>
+            </figure>
+        </section>
+
+        <footer>
+            <button class="choice-btn">Pikachu</button>
+            <button class="choice-btn">Charmander</button>
+            <button class="choice-btn">Eevee</button>
+            <button class="choice-btn">Snorlax</button>
+        </footer>
+    </main>
+
+    <main id="results-screen" class="hidden">
+        <h1>Game Over!</h1>
+        <p>You scored <span id="final-score">0</span> out of 10</p>
+        <button id="restart-btn">Play Again</button>
+    </main>
+    
+</body>
+</html>
