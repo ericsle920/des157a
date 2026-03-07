@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Original red gradient + a radial overlay for depth */
+    background: 
+        radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 100%),
+        linear-gradient(to bottom, #d30a16 0%, #ff5e5e 100%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pixelify Sans', sans-serif; 
+    overflow: hidden; 
+}
+
+#landing {
+    width: 1200px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically with breathing room */
+    align-items: center; 
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+#game {
+    width: 1200px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes header to top and footer to bottom */
+    align-items: center; 
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 0; /* Creates the safety margin you needed */
+}
+
+#landing h1 {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 64px; 
+    line-height: 1.1;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+#landing h1 span {
+    color: #ffcb05; 
+    display: block; 
+}
+
+#landing p {
+    color: white;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+#landing button {
+    background: white;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding: 15px 50px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 29px;
+    font-weight: 700;
+    cursor: pointer;
+    width: fit-content; 
+    transition: transform 0.1s;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 1.2s;
+}
+
+#landing button:hover {
+    transform: scale(1.05);
+    background-color: #d30a16;
+    color: #fdfdfd;
+}
+
+.hidden {
+    display: none !important;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    color: white;
+    font-size: 35px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    gap: 40px;
+    flex-grow: 1; /* Allows the middle to take up available space */
+}
+
+figure {
+    position: relative;
+    width: 350px;           
+    height: 350px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/bluespiky.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 20px;   
+}
+
+section h2 span {
+    color: #ffcb05;
+    display: block;
+}
+
+section h2 {
+    color: #3b4cca;
+    font-size: 56px; 
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+figure img {
+    width: 260px;
+    height: auto;
+    image-rendering: pixelated; 
+    z-index: 5;
+    animation: bobble 2.5s ease-in-out infinite;
+}
+
+@keyframes bobble {
+    0% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-15px) scale(1.08); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+footer button {
+    background: white;
+    border: 4px solid black;
+    border-radius: 12px;
+    padding: 12px 35px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+footer button:hover {
+    background: red;
+    transform: scale(1.1);
+    color: #fdfdfd;
+}
+
+/* --- Essential Additions for Logic --- */
+
+#progress-container {
+    width: 250px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px solid black;
+    border-radius: 20px;
+    align-self: center;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%; 
+    height: 100%;
+    background-color: #ffcb05;
+    transition: width 0.3s ease;
+}
+
+#results-screen {
+    width: 1200px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#results-screen h1 {
+    font-size: 80px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#results-screen p {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 40px;
+} 
+
+button.correct {
+    background-color: #4CAF50 !important;
+    color: white !important;
+}
+
+button.incorrect {
+    background-color: #d30a16 !important;
+    color: white !important;
+} 
+
+#sound-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+#mute-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#volume-slider {
+    width: 80px;
+    cursor: pointer;
+    accent-color: #ffcb05;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+/* --- Feedback Overlay --- */
+#feedback-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+.feedback-content {
+    text-align: center;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#feedback-text {
+    font-size: 80px;
+    text-shadow: 4px 4px 0px #000;
+    margin-bottom: 10px;
+}
+
+.text-correct { color: #4CAF50; }
+.text-wrong { color: #d30a16; }
+
+#it-was-text {
+    font-size: 50px;
+    color: #ffcb05;
+    text-shadow: 3px 3px 0px #000;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards 0.3s;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates a 50px grid pattern using only CSS */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    animation: moveGrid 10s linear infinite;
+}
+
+@keyframes moveGrid {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+}
+
+@keyframes slideBackground {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-500px, -500px);
+    }
+}
+
+@keyframes pulseRed {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.1); }
+    100% { filter: brightness(1); }
+}
+
+#game {
+    /* ... your other game styles ... */
+    animation: pulseRed 8s ease-in-out infinite;
+}
+
+.staggered-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.staggered-title .word {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* The Stagger: Delaying each word */
+.word:nth-child(1) { animation-delay: 0.2s; }
+.word:nth-child(2) { animation-delay: 0.5s; }
+.word:nth-child(3) { 
+    animation-delay: 0.8s;
+    color: #ffcb05; /* Keeps your Pokemon Yellow for the last word */
+    text-shadow: 4px 4px 0px #3b4cca; /* Adds a blue shadow for contrast */
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#pokemon-roster-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    gap: 15px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.roster-item {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.2));
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Styled Play Again Button */
+#restart-btn {
+    background: #ffcb05;
+    color: #3b4cca;
+    border: 4px solid #3b4cca;
+    border-radius: 15px;
+    padding: 15px 60px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0px 6px 0px #2a3796;
+    font-family: Pixelify Sans;
+}
+
+#restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 9px 0px #2a3796;
+    background: #ffd541;
+}
+
+#restart-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0px 2px 0px #2a3796;
+}

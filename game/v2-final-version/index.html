@@ -14,19 +14,36 @@
 </head>
 
 <body>
-    <main id="landing" class="hidden">
-        <h1>Who's that <br> Pokemon?</h1>
+    <div class="background-animation"></div>
+
+    <main id="landing">
+        <h1 class="staggered-title">
+            <span class="word">Who's</span>
+            <span class="word">That</span>
+            <span class="word">Pokémon?</span>
+        </h1>
         <p>How many can you get correct?</p>
         <button id="start-btn">Start Game!</button>
     </main>
 
-    <main id="game" class="none">
+    <main id="game" class="hidden">
         <header>
             <span id="round">1/10</span>
             <div id="progress-container">
                 <div id="progress-bar"></div>
             </div>
             <span id="score">0 points</span>
+
+            <div id="sound-controls">
+                <button id="mute-btn">🔊</button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            </div>
+
+            <audio id="bg-music" src="audio/theme.mp3" loop></audio>
+            <audio id="intro-voice" src="audio/whos_that_pokemon.mp3"></audio>
+            <audio id="correct-sfx" src="audio/correct.mp3"></audio>
+            <audio id="wrong-sfx" src="audio/wrong.mp3"></audio>
+            <audio id="reveal-voice" src=""></audio>
         </header>
 
         <section>
@@ -35,7 +52,7 @@
             </div>
 
             <figure>
-                <img id="pokemon-image" src="images/_s.png" alt="mysterious pokemon silhouette" width="400" height="400">
+                <img id="pokemon-image" src="images/pikachu_s.svg" alt="mysterious pokemon silhouette" width="400" height="400">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -53,8 +70,18 @@
     <main id="results-screen" class="hidden">
         <h1>Game Over!</h1>
         <p>You scored <span id="final-score">0</span> out of 10</p>
+        
+        <div id="pokemon-roster-grid"></div>
+
         <button id="restart-btn">Play Again</button>
     </main>
+
+    <div id="feedback-overlay" class="hidden">
+        <div class="feedback-content">
+            <h2 id="feedback-text">That's Correct!</h2>
+            <h3 id="it-was-text">It's Pikachu!</h3>
+        </div>
+    </div>
     
 </body>
 </html>
