@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script> 
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         <button id="start-btn">Start Game!</button>
     </main>
 
-    <main id="game" class="hidden">
+    <section id="game" class="hidden">
         <header>
             <span id="round">1/10</span>
             <div id="progress-container">
@@ -43,7 +44,7 @@
             <audio id="intro-voice" src="audio/whos_that_pokemon.mp3"></audio>
             <audio id="correct-sfx" src="audio/correct.mp3"></audio>
             <audio id="wrong-sfx" src="audio/wrong.mp3"></audio>
-            <audio id="reveal-voice" src=""></audio>
+            <audio id="reveal-voice" src="audio/reveal_squirtle.mp3"></audio>
         </header>
 
         <section>
@@ -52,7 +53,8 @@
             </div>
 
             <figure>
-                <img id="pokemon-image" src="images/pikachu_s.svg" alt="mysterious pokemon silhouette" width="400" height="400">
+                <img id="pokemon-image" src="images/pikachu_s.svg" alt="mysterious pokemon silhouette" width="400"
+                    height="400">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,16 +67,17 @@
             <button class="choice-btn">Eevee</button>
             <button class="choice-btn">Snorlax</button>
         </footer>
-    </main>
+    </section>
 
-    <main id="results-screen" class="hidden">
+    <section id="results-screen" class="hidden">
         <h1>Game Over!</h1>
         <p>You scored <span id="final-score">0</span> out of 10</p>
-        
+
         <div id="pokemon-roster-grid"></div>
 
         <button id="restart-btn">Play Again</button>
-    </main>
+        <a href="sources.html">Sources</a>
+    </section>
 
     <div id="feedback-overlay" class="hidden">
         <div class="feedback-content">
@@ -82,6 +85,8 @@
             <h3 id="it-was-text">It's Pikachu!</h3>
         </div>
     </div>
-    
+
+
 </body>
+
 </html>

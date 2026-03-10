@@ -1,8 +1,8 @@
-(function (){
+(function () {
     'use strict';
     console.log('reading js');
 
-    // 1. DATA ROSTER
+    // pokemon array
     const pokemonData = [
         { name: "Pikachu", s: "images/pikachu_s.svg", r: "images/pikachu.png" },
         { name: "Charmander", s: "images/charmander_s.svg", r: "images/charmander.png" },
@@ -16,123 +16,139 @@
         { name: "Psyduck", s: "images/psyduck_s.svg", r: "images/psyduck.png" }
     ];
 
-    // 2. STATE MANAGEMENT
+    // forgot what it was called but like organizing the state
     let score = 0;
     let currentRound = 0;
     const totalRounds = 10;
 
-    // 3. ELEMENT SELECTORS
-    const landingScreen = document.getElementById('landing');
-    const gameScreen = document.getElementById('game');
-    const resultsScreen = document.getElementById('results-screen');
-    const pokemonImg = document.getElementById('pokemon-image');
+    // hella variables
+    const landingScreen = document.querySelector('#landing');
+    const gameScreen = document.querySelector('#game');
+    const resultsScreen = document.querySelector('#results-screen');
+    const pokemonImg = document.querySelector('#pokemon-image');
+    const progressBar = document.querySelector('#progress-bar');
+    const roundIndicator = document.querySelector('#round');
+    const scoreIndicator = document.querySelector('#score');
+    const finalScoreText = document.querySelector('#final-score');
+    const overlay = document.querySelector('#feedback-overlay');
+    const feedbackText = document.querySelector('#feedback-text');
+    const itWasText = document.querySelector('#it-was-text');
+
+    const bgMusic = document.querySelector('#bg-music');
+    const introVoice = document.querySelector('#intro-voice');
+    const correctSfx = document.querySelector('#correct-sfx');
+    const wrongSfx = document.querySelector('#wrong-sfx');
+    const revealVoice = document.querySelector('#reveal-voice');
+    const volumeSlider = document.querySelector('#volume-slider');
+    const muteBtn = document.querySelector('#mute-btn');
+
     const choiceBtns = document.querySelectorAll('.choice-btn');
-    const progressBar = document.getElementById('progress-bar');
-    const roundIndicator = document.getElementById('round');
-    const scoreIndicator = document.getElementById('score');
-    const finalScoreText = document.getElementById('final-score');
-    const overlay = document.getElementById('feedback-overlay');
-    const feedbackText = document.getElementById('feedback-text');
-    const itWasText = document.getElementById('it-was-text');
 
-    // Audio Elements
-    const bgMusic = document.getElementById('bg-music');
-    const introVoice = document.getElementById('intro-voice');
-    const correctSfx = document.getElementById('correct-sfx');
-    const wrongSfx = document.getElementById('wrong-sfx');
-    const revealVoice = document.getElementById('reveal-voice');
-    const volumeSlider = document.getElementById('volume-slider');
-    const muteBtn = document.getElementById('mute-btn');
-
-    // Fisher-Yates Shuffle Algorithm
+    // randomizing
     function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
+        array.sort(function() {
+            return Math.random() - 0.5;
+        });
     }
 
-    // 4. SHUFFLE LOGIC FOR BUTTONS
+    // function to get names, make wrong names, shuffle, put right answer back in, make it so the final answer isn't last
     function getChoices(correctAnswer) {
-        let distractors = pokemonData
-            .map(p => p.name)
-            .filter(name => name !== correctAnswer);
+        let allNames = [];
+        
+        for (let i = 0; i < pokemonData.length; i++) {
+            allNames.push(pokemonData[i].name);
+        }
 
-        distractors.sort(() => Math.random() - 0.5);
-        let picks = distractors.slice(0, 3);
+        let wrongNames = [];
+        for (let i = 0; i < allNames.length; i++) {
+            if (allNames[i] !== correctAnswer) {
+                wrongNames.push(allNames[i]);
+            }
+        }
+
+        shuffleArray(wrongNames);
+        let picks = wrongNames.slice(0, 3);
 
         picks.push(correctAnswer);
-        return picks.sort(() => Math.random() - 0.5);
+
+        shuffleArray(picks);
+        return picks;
     }
 
-    // 5. GAME FUNCTIONS
+    // functions
     function loadRound() {
         const currentPoke = pokemonData[currentRound];
-
-        // Ensure overlay is hidden at start of new round
+        
         overlay.classList.add('hidden');
-        
-        choiceBtns.forEach(btn => {
-            btn.classList.remove('correct', 'incorrect', 'disabled');
-        });
-        
+
+        // reset the buttons
+        for (let i = 0; i < choiceBtns.length; i++) {
+            choiceBtns[i].classList.remove('correct', 'incorrect', 'disabled');
+        }
+
         pokemonImg.src = currentPoke.s;
-        roundIndicator.innerText = `${currentRound + 1}/${totalRounds}`;
-        scoreIndicator.innerText = `${score} points`;
-        progressBar.style.width = `${((currentRound + 1) / totalRounds) * 100}%`;
+        roundIndicator.innerText = (currentRound + 1) + '/' + totalRounds;
+        scoreIndicator.innerText = score + ' points';
+        
+        // progress bar
+        let progressPercent = ((currentRound + 1) / totalRounds) * 100;
+        progressBar.style.width = progressPercent + '%';
 
         introVoice.currentTime = 0;
         introVoice.play();
 
         const choices = getChoices(currentPoke.name);
-        choiceBtns.forEach((btn, index) => {
-            btn.innerText = choices[index];
-        });
+        for (let i = 0; i < choiceBtns.length; i++) {
+            choiceBtns[i].innerText = choices[i];
+        }
     }
 
+
+    // showing the results of the quiz
     function showResults() {
         overlay.classList.add('hidden');
         gameScreen.classList.add('hidden');
         resultsScreen.classList.remove('hidden');
         finalScoreText.innerText = score;
 
-        const rosterGrid = document.getElementById('pokemon-roster-grid');
-        rosterGrid.innerHTML = ''; // Clear any old icons if playing twice
+        const rosterGrid = document.querySelector('#pokemon-roster-grid');
+        rosterGrid.innerHTML = ''; 
 
-        // Loop through the (now shuffled) data and add the revealed images
-        pokemonData.forEach((poke, index) => {
+        for (let i = 0; i < pokemonData.length; i++) {
+            const poke = pokemonData[i];
             const img = document.createElement('img');
-            img.src = poke.r; // Use the revealed (.png) version
+            img.src = poke.r; 
             img.classList.add('roster-item');
             img.alt = poke.name;
-            
-            // Stagger the entrance of the icons for a cool effect
-            img.style.animationDelay = `${index * 0.1}s`;
-            
+            // had to ask my friend for help with the lines below
+            img.style.animationDelay = (i * 0.1) + 's';
             rosterGrid.appendChild(img);
-        });
-    }       
+        }
+    }
 
-    // 6. EVENT LISTENERS
-    document.getElementById('start-btn').addEventListener('click', () => {
+    // interactive elements
+    document.querySelector('#start-btn').addEventListener('click', function() {
         landingScreen.classList.add('hidden');
         gameScreen.classList.remove('hidden');
-        
-        // --- RANDOMIZATION TRIGGER ---
+
         shuffleArray(pokemonData);
-        
+
         bgMusic.volume = 0.4;
-        bgMusic.play().catch(e => console.log("Audio play blocked."));
-        
+        bgMusic.play();
+
         loadRound();
     });
 
-    choiceBtns.forEach(button => {
-        button.addEventListener('click', (e) => {
+
+    for (let i = 0; i < choiceBtns.length; i++) {
+        choiceBtns[i].addEventListener('click', function(e) {
             const guess = e.target.innerText;
             const currentPoke = pokemonData[currentRound];
 
-            choiceBtns.forEach(btn => btn.classList.add('disabled'));
+            for (let j = 0; j < choiceBtns.length; j++) {
+                choiceBtns[j].classList.add('disabled');
+            }
+
             feedbackText.classList.remove('text-correct', 'text-wrong');
 
             if (guess === currentPoke.name) {
@@ -150,36 +166,44 @@
                 feedbackText.classList.add('text-wrong');
             }
 
+            // revealing da pokemon
             pokemonImg.src = currentPoke.r;
-            itWasText.innerText = `It's ${currentPoke.name}!`;
-            
-            setTimeout(() => {
-                revealVoice.src = `audio/reveal_${currentPoke.name.toLowerCase()}.mp3`;
+            itWasText.innerText = "It's " + currentPoke.name + "!";
+
+            setTimeout(function() {
+                let nameLower = currentPoke.name.toLowerCase();
+                revealVoice.src = 'audio/reveal_' + nameLower + '.mp3';
                 revealVoice.play();
                 overlay.classList.remove('hidden');
-            }, 400);
+            }, 800);
+            // delay so audio hits after pokemon is revealed
 
-            setTimeout(() => {
+            setTimeout(function() {
                 if (currentRound < totalRounds - 1) {
                     currentRound++;
                     loadRound();
                 } else {
                     showResults();
                 }
-            }, 3000); 
+            }, 3000);
         });
-    });
+    }
 
-    volumeSlider.addEventListener('input', (e) => {
+    // audio stuff
+    volumeSlider.addEventListener('input', function(e) {
         bgMusic.volume = e.target.value;
     });
 
-    muteBtn.addEventListener('click', () => {
+    muteBtn.addEventListener('click', function() {
         bgMusic.muted = !bgMusic.muted;
-        muteBtn.innerText = bgMusic.muted ? "🔇" : "🔊";
+        if (bgMusic.muted) {
+            muteBtn.innerText = "🔇";
+        } else {
+            muteBtn.innerText = "🔊";
+        }
     });
 
-    document.getElementById('restart-btn').addEventListener('click', () => {
+    document.querySelector('#restart-btn').addEventListener('click', function() {
         location.reload();
     });
 

@@ -5,17 +5,16 @@
 }
 
 body {
-    /* Original red gradient + a radial overlay for depth */
-    background: 
-        radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 100%),
+    background:
+        radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.3) 100%),
         linear-gradient(to bottom, #d30a16 0%, #ff5e5e 100%);
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Pixelify Sans', sans-serif; 
-    overflow: hidden; 
+    font-family: 'Pixelify Sans', sans-serif;
+    overflow: hidden;
 }
 
 #landing {
@@ -23,8 +22,8 @@ body {
     height: 750px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers content vertically with breathing room */
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     text-align: center;
     position: relative;
     margin: 0 auto;
@@ -36,25 +35,25 @@ body {
     height: 750px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes header to top and footer to bottom */
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     position: relative;
     margin: 0 auto;
-    padding: 40px 0; /* Creates the safety margin you needed */
+    padding: 40px 0;
 }
 
 #landing h1 {
     font-family: 'Pixelify Sans', sans-serif;
-    font-size: 64px; 
-    line-height: 1.1;
-    color: #ffffff; 
+    font-size: 100px;
+    line-height: 0.8;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 #landing h1 span {
-    color: #ffcb05; 
-    display: block; 
+    color: #ffcb05;
+    display: block;
 }
 
 #landing p {
@@ -68,11 +67,11 @@ body {
     border: 4px solid black;
     border-radius: 15px;
     padding: 15px 50px;
-    font-family: 'Pixelify Sans', sans-serif;
+    font-family: 'Pixelify Sans';
     font-size: 29px;
     font-weight: 700;
     cursor: pointer;
-    width: fit-content; 
+    width: fit-content;
     transition: transform 0.1s;
     opacity: 0;
     animation: fadeIn 0.5s ease-out forwards 1.2s;
@@ -102,15 +101,16 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     gap: 40px;
-    flex-grow: 1; /* Allows the middle to take up available space */
+    flex-grow: 1;
+    padding-top: 40px;
 }
 
 figure {
     position: relative;
-    width: 350px;           
-    height: 350px; 
+    width: 400px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,34 +124,45 @@ footer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding-bottom: 20px;   
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 section h2 span {
     color: #ffcb05;
     display: block;
+    text-shadow: 4px 4px 0px #3b4cca;
 }
 
 section h2 {
-    color: #3b4cca;
-    font-size: 56px; 
+    color: #ffcb05;
+    font-size: 80px;
     line-height: 1.1;
     text-transform: uppercase;
     text-align: left;
 }
 
 figure img {
-    width: 260px;
+    width: 365px;
     height: auto;
-    image-rendering: pixelated; 
+    image-rendering: pixelated;
+    /* idk if the pixelated helps since it's already pixelated but ima just do it anyways */
     z-index: 5;
     animation: bobble 2.5s ease-in-out infinite;
 }
 
 @keyframes bobble {
-    0% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-15px) scale(1.08); }
-    100% { transform: translateY(0px) scale(1); }
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.08);
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+    }
 }
 
 footer button {
@@ -172,8 +183,6 @@ footer button:hover {
     color: #fdfdfd;
 }
 
-/* --- Essential Additions for Logic --- */
-
 #progress-container {
     width: 250px;
     height: 25px;
@@ -185,7 +194,7 @@ footer button:hover {
 }
 
 #progress-bar {
-    width: 0%; 
+    width: 0%;
     height: 100%;
     background-color: #ffcb05;
     transition: width 0.3s ease;
@@ -204,14 +213,14 @@ footer button:hover {
 #results-screen h1 {
     font-size: 80px;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 #results-screen p {
     font-size: 40px;
     color: white;
-    margin-bottom: 40px;
-} 
+    margin-bottom: 0px;
+}
 
 button.correct {
     background-color: #4CAF50 !important;
@@ -221,7 +230,7 @@ button.correct {
 button.incorrect {
     background-color: #d30a16 !important;
     color: white !important;
-} 
+}
 
 #sound-controls {
     display: flex;
@@ -249,7 +258,6 @@ button.incorrect {
     pointer-events: none;
 }
 
-/* --- Feedback Overlay --- */
 #feedback-overlay {
     position: fixed;
     top: 0;
@@ -274,8 +282,13 @@ button.incorrect {
     margin-bottom: 10px;
 }
 
-.text-correct { color: #4CAF50; }
-.text-wrong { color: #d30a16; }
+.text-correct {
+    color: #4CAF50;
+}
+
+.text-wrong {
+    color: #d30a16;
+}
 
 #it-was-text {
     font-size: 50px;
@@ -286,12 +299,21 @@ button.incorrect {
 }
 
 @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 .background-animation {
@@ -300,8 +322,7 @@ button.incorrect {
     left: 0;
     width: 100%;
     height: 100%;
-    /* This creates a 50px grid pattern using only CSS */
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -310,27 +331,40 @@ button.incorrect {
 }
 
 @keyframes moveGrid {
-    from { background-position: 0 0; }
-    to { background-position: 50px 50px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
 }
 
 @keyframes slideBackground {
     from {
         transform: translate(0, 0);
     }
+
     to {
         transform: translate(-500px, -500px);
     }
 }
 
 @keyframes pulseRed {
-    0% { filter: brightness(1); }
-    50% { filter: brightness(1.1); }
-    100% { filter: brightness(1); }
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.1);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
 }
 
 #game {
-    /* ... your other game styles ... */
     animation: pulseRed 8s ease-in-out infinite;
 }
 
@@ -348,24 +382,37 @@ button.incorrect {
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-/* The Stagger: Delaying each word */
-.word:nth-child(1) { animation-delay: 0.2s; }
-.word:nth-child(2) { animation-delay: 0.5s; }
-.word:nth-child(3) { 
+/* had to look this up so i could get the staggering words but this was cool to do */
+.word:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.word:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.word:nth-child(3) {
     animation-delay: 0.8s;
-    color: #ffcb05; /* Keeps your Pokemon Yellow for the last word */
-    text-shadow: 4px 4px 0px #3b4cca; /* Adds a blue shadow for contrast */
+    color: #ffcb05;
+    text-shadow: 4px 4px 0px #3b4cca;
 }
 
 @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 #pokemon-roster-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 40px;
     padding: 20px;
@@ -377,17 +424,16 @@ button.incorrect {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.2));
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.2));
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-/* Styled Play Again Button */
 #restart-btn {
     background: #ffcb05;
     color: #3b4cca;
     border: 4px solid #3b4cca;
     border-radius: 15px;
-    padding: 15px 60px;
+    padding: 15px 30px;
     font-size: 28px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -404,4 +450,8 @@ button.incorrect {
 #restart-btn:active {
     transform: translateY(3px);
     box-shadow: 0px 2px 0px #2a3796;
+}
+
+a {
+    padding-top: 4px;
 }
